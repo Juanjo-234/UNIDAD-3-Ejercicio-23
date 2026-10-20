@@ -1,7 +1,11 @@
-Resolución del ejercicio N°23 de la unidad 3 de programación 2.
-Este programa modela un sistema de gestión bancaria que administra diferentes tipos de cuentas financieras mediante el uso de herencia, atributos protegidos, polimorfismo y sobrescritura de métodos en Java.
+Este programa está diseñado para modelar un sistema jerárquico de cuentas bancarias aplicando los principios fundamentales de la programación orientada a objetos en Java: herencia, encapsulamiento, polimorfismo y especialización de comportamiento mediante la sobrescritura de métodos (@Override).
 
-Clases utilizadas
-CuentaBancaria: Clase base que almacena los datos comunes (numeroCuenta, saldo, titular) y define las operaciones genéricas de depósito y extracción.
-CajaAhorro: Clase hija que extiende de CuentaBancaria e incorpora un método específico para aplicar intereses al saldo acumulado.
-CuentaCorriente: Clase hija que extiende de CuentaBancaria, incorpora un límite de sobregiro autorizado y sobrescribe el método de extracción para permitir retiros utilizando dicho margen.
+A continuación se detalla exactamente lo que hace cada parte del programa:
+
+Define la clase base CuentaBancaria: Concentra los atributos comunes (numeroCuenta, titular y saldo) aplicando encapsulamiento, e implementa la lógica base para depósitos y extracciones estándar.
+
+Desarrolla la subclase CajaAhorro: Extiende de CuentaBancaria e incorpora un método específico (aplicarIntereses()) para incrementar el saldo en función de una tasa porcentual de rendimiento.
+
+Desarrolla la subclase CuentaCorriente: Extiende de CuentaBancaria añadiendo un atributo privado limiteSobregiro y sobrescribe el método extraer(double monto) para permitir extracciones que utilicen tanto el saldo disponible como el margen de sobregiro autorizado.
+
+Ejecuta la prueba en el main: Instancia ambos tipos de cuentas (polimórficamente o directamente), simula operaciones financieras mixtas (depósitos, extracciones normales, extracciones excedidas usando sobregiro y aplicación de intereses), y muestra los saldos finales por consola.
